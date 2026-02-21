@@ -1,0 +1,10 @@
+from django.contrib import admin
+from .models import Task
+
+# Register your models here.
+
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('task', 'completed', 'updated_at')
+    search_fields = ('task', 'updated_at')
+
+admin.site.register(Task, TaskAdmin)
